@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <span className="title">Welcome to Interactive BookTracker</span>
+        <span className="title">Hi, welcome to Interactive BookTracker</span>
         <br></br>
         <button className="add-book">Add Book</button>
       </div>
