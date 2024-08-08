@@ -1,0 +1,28 @@
+.modal-container {
+    position:fixed;
+    z-index: 1;
+    width: 300px;
+    height: fit-content;
+    padding: 5px;
+    background-color: aliceblue;
+    border: 2px solid black;
+    
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal {
+    width:20px;
+    margin-left: 0px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 15px;
+
+}
