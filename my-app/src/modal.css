@@ -33,4 +33,5 @@
 .submit-button {
     border:0px;
     background-color: aliceblue;
+    cursor: pointer;
 }
