@@ -26,16 +26,20 @@ function App() {
 
   let books: Book[] = [];
 
+  let [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div className="App">
       <div className="header">
         <span className="title">Hi, welcome to Interactive BookTracker</span>
         <br></br>
-        <button className="add-book" onClick={handleClick}>Add Book</button>
+        <button className="add-book" onClick={() => setModalOpen(true)}>
+          Add Book
+        </button>
+        {modalOpen && <Modal closeModal={()=>{setModalOpen(false)}}/>}
       </div>
      {/* <img src="bookcase.png" alt="Bookcase"></img> */}
     <Bookshelf />
-    <Modal />
     </div>
     
   );

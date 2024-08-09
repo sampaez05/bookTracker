@@ -20,9 +20,17 @@
 }
 
 .modal {
-    width:20px;
-    margin-left: 0px;
+    left:0px;
     font-family:'Times New Roman', Times, serif;
     font-size: 15px;
 
+}
+
+.form-input {
+    padding:3px;
+}
+
+.submit-button {
+    border:0px;
+    background-color: aliceblue;
 }
