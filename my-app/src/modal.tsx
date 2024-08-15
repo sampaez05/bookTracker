@@ -1,42 +1,71 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FaRegCircleCheck } from "react-icons/fa6";
+import { CgCloseO } from "react-icons/cg";
+import { Books, Book } from "./book";
+import {books} from "./App"
 
 import "./modal.css";
 
 export const Modal = ({ closeModal }) => {
 
+
+	const [submittedForm,setSubmittedForm] = useState({
+		title:"", author:"",translator:"",rating:"",review:""});
+
+	const onChangeHandler = (e) => {
+		setSubmittedForm({
+			...submittedForm,
+			[e.target.name]:e. target.value,
+		});
+	}
+	
+	const submitAndClose = (e) => {
+		e.preventDefault();
+		books.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
+		console.log(books.length)
+		console.log(books)
+		closeModal();
+	}
 	return (
 		<div className="modal-container">
 			Add Book Info
 			<div className="modal">
+				<button className="exit-button" onClick={closeModal}>
+						<CgCloseO size={30}/>
+				</button>
 				<form>
 					<div className="form-input">
-						<label htmlFor="Title">Title:</label>
-						<br></br>
-						<input name="Title"/>
+						<label>Title:
+							<br></br>
+							<input name="title" defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
+						</label>
 					</div>
 					<div className="form-input">
-						<label htmlFor="Author">Author:</label>
-						<br></br>
-						<input name="Author"/>
+						<label>Author:
+							<br></br>
+							<input name="author" defaultValue={submittedForm.author} onChange={onChangeHandler}/>
+						</label>
 					</div>
 					<div className="form-input">
-						<label htmlFor="Translator">Translator:</label>
-						<br></br>
-						<input name="Translator"/>
+						<label>Translator:
+							<br></br>
+							<input name="translator" defaultValue={submittedForm.translator} onChange={onChangeHandler}/>
+						</label>
 					</div>
 					<div className="form-input">
-						<label htmlFor="Rating">Rating:</label>
-						<br></br>
-						<input name="Rating"/>
+						<label>Rating:
+							<br></br>
+							<input name="rating" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+						</label>
 					</div>
 					<div className="form-input">
-						<label htmlFor="Review">Review:</label>
-						<br></br>
-						<textarea name="Review"/>
+						<label>Review:
+							<br></br>
+							<textarea name="review" defaultValue={submittedForm.review} onChange={onChangeHandler}/>
+						</label>
 					</div>
 					<br></br>
-					<button className="submit-button" onClick={closeModal}>
+					<button className="submit-button" onClick={submitAndClose}>
 						<FaRegCircleCheck size={30}/>
 					</button>
 				</form>

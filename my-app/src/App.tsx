@@ -3,28 +3,15 @@ import './App.css';
 import { isBindingElement } from 'typescript';
 import { Modal } from "./modal";
 import { Bookshelf } from "./bookshelf";
+import { Books, Book } from "./book";
 
-
-class Book {
-  x:number;
-  y:number;
-  height:number;
-  width:number;
-  constructor (x:number,y:number,height:number,width:number){
-    this.x = x;
-    this.y = y;
-    this.height = height;
-    this.width = width;
-  }
-}
+export const books:Book[] = [];
 
 function App() {
 
   const handleClick = () => {
     console.log("hi");
   }
-
-  let books: Book[] = [];
 
   let [modalOpen, setModalOpen] = useState(false);
 
@@ -40,6 +27,7 @@ function App() {
       </div>
      {/* <img src="bookcase.png" alt="Bookcase"></img> */}
     <Bookshelf />
+    {books.length != 0 && <Books />}
     </div>
     
   );

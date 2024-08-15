@@ -1,4 +1,8 @@
 
+.bookshelf {
+    z-index:-1;
+}
+
 .bookshelf1 {
     border-top: 10px solid black;
     border-left: 10px solid black;
