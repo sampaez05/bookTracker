@@ -31,7 +31,7 @@ export const BookModal = ({ closeModal }) => {
 	}
 	return (
 		<div className="modal-container">
-			The Book Info
+			{books[0].title}
 			<div className="modal">
 				<button className="exit-button" onClick={closeModal}>
 						<CgCloseO size={30}/>
