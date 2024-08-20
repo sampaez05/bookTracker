@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BookModal } from "./book-info-modal";
-import {books} from "./App";
+import {books, getIndex} from "./App";
 
 import "./book.css";
 
@@ -31,6 +31,7 @@ export class Book {
 export const Books = () => {
 
     let [modalOpen, setModalOpen] = useState(false);
+
     /**
      * modalOpen is a boolean value to determine whether or not the modal(popup screen) is open or closed 
      * and is false by default to keep the modal closed
@@ -39,7 +40,7 @@ export const Books = () => {
 
 	return (
         <div className="book">
-            <button className="book-button" onClick={() => setModalOpen(true)}>{books[0].title}</button> 
+            <button className="book-button" onClick={() => setModalOpen(true)}>{books[getIndex(books)].title}</button> 
         {/** this calls setModalOpen when the button is pressed, 
          * setting modalOpen to true so the modal will open and pop up 
          */}

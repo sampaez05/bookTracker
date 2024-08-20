@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { CgCloseO } from "react-icons/cg";
 import { Books, Book } from "./book";
-import {books} from "./App"
+import {books, getIndex} from "./App"
 
 import "./modal.css";
 
 export const BookModal = ({ closeModal }) => {
 
 	const [submittedForm,setSubmittedForm] = useState({
-		title:books[0].title, author:books[0].author,translator:books[0].translator,rating:books[0].translator,review:books[0].review});
+		title:books[getIndex(books)].title, author:books[getIndex(books)].author,translator:books[getIndex(books)].translator,rating:books[getIndex(books)].translator,review:books[getIndex(books)].review});
 
 	const onChangeHandler = (e) => {
 		setSubmittedForm({
@@ -20,18 +20,18 @@ export const BookModal = ({ closeModal }) => {
 	
 	const submitAndClose = (e) => {
 		e.preventDefault();
-        books[0].title = submittedForm.title;
-        books[0].author = submittedForm.author;
-        books[0].translator = submittedForm.translator;
-        books[0].rating = submittedForm.rating;
-        books[0].review = submittedForm.review;
+        books[getIndex(books)].title = submittedForm.title;
+        books[getIndex(books)].author = submittedForm.author;
+        books[getIndex(books)].translator = submittedForm.translator;
+        books[getIndex(books)].rating = submittedForm.rating;
+        books[getIndex(books)].review = submittedForm.review;
 		console.log(books.length)
 		console.log(books)
 		closeModal();
 	}
 	return (
 		<div className="modal-container">
-			{books[0].title}
+			{books[getIndex(books)].title}
 			<div className="modal">
 				<button className="exit-button" onClick={closeModal}>
 						<CgCloseO size={30}/>

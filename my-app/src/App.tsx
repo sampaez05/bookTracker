@@ -6,6 +6,14 @@ import { Bookshelf } from "./bookshelf";
 import { Books, Book } from "./book";
 
 export const books:Book[] = []; 
+
+export function getIndex(books:Book[]):number{
+  let index:number = -1; //starts at -1 since indexing starts at 0 not 1
+  for (let book of books){
+    index=index+1;
+  }
+  return index;
+}
 /** books is an array of Books, 
  * which starts as empty and gets added to every time a user adds a book through the form on the modal
  */
