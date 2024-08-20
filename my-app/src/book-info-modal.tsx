@@ -6,10 +6,10 @@ import {books} from "./App"
 
 import "./modal.css";
 
-export const Modal = ({ closeModal }) => {
+export const BookModal = ({ closeModal }) => {
 
 	const [submittedForm,setSubmittedForm] = useState({
-		title:"", author:"",translator:"",rating:"",review:""});
+		title:books[0].title, author:books[0].author,translator:books[0].translator,rating:books[0].translator,review:books[0].review});
 
 	const onChangeHandler = (e) => {
 		setSubmittedForm({
@@ -20,14 +20,18 @@ export const Modal = ({ closeModal }) => {
 	
 	const submitAndClose = (e) => {
 		e.preventDefault();
-		books.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
+        books[0].title = submittedForm.title;
+        books[0].author = submittedForm.author;
+        books[0].translator = submittedForm.translator;
+        books[0].rating = submittedForm.rating;
+        books[0].review = submittedForm.review;
 		console.log(books.length)
 		console.log(books)
 		closeModal();
 	}
 	return (
 		<div className="modal-container">
-			Add Book Info
+			The Book Info
 			<div className="modal">
 				<button className="exit-button" onClick={closeModal}>
 						<CgCloseO size={30}/>
@@ -36,13 +40,13 @@ export const Modal = ({ closeModal }) => {
 					<div className="form-input">
 						<label>Title:
 							<br></br>
-							<input required={true} name="title" defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
+							<input name="title" defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Author:
 							<br></br>
-							<input required name="author" defaultValue={submittedForm.author} onChange={onChangeHandler}/>
+							<input name="author" defaultValue={submittedForm.author} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">
@@ -66,7 +70,7 @@ export const Modal = ({ closeModal }) => {
 					<br></br>
 					<button className="submit-button" onClick={submitAndClose}>
 						<FaRegCircleCheck size={30}/>
-					</button>
+                    </button>
 				</form>
 			</div>
 		</div>

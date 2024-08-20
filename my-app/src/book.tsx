@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BookModal } from "./book-info-modal";
 
 import "./book.css";
 
@@ -22,15 +23,30 @@ export class Book {
      * author:string - the person who wrote the book
      * translator:string - the person who translated the book, if applicable
      * rating:string - the number of stars the user would rate the book
-     * review:string - the user's review/thoughts/opinions about the book
      */
     }
   }
 
 export const Books = () => {
+
+    let [modalOpen, setModalOpen] = useState(false);
+    /**
+     * modalOpen is a boolean value to determine whether or not the modal(popup screen) is open or closed 
+     * and is false by default to keep the modal closed
+     * setModalOpen - a function that sets modalOpen to true to open the modal component
+    */
+
 	return (
         <div className="book">
-            <div></div>
+            <button className="book-button" onClick={() => setModalOpen(true)}></button> 
+        {/** this calls setModalOpen when the button is pressed, 
+         * setting modalOpen to true so the modal will open and pop up 
+         */}
+        {modalOpen && <BookModal closeModal={()=>{setModalOpen(false)}}/>} 
+        {/** this calls setModalOpen and sets modalOpen to false to close the modal
+        * closeModal - a function that, when called, calls setModalOpen in order to close the modal
+        * the closeModal function gets called inside modal.tsx whenever the user either clicks the submit or exit button on the modal
+        */}
         </div>
 	);
 };
