@@ -20,10 +20,16 @@ export const Modal = ({ closeModal }) => {
 	
 	const submitAndClose = (e) => {
 		e.preventDefault();
-		books.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
-		console.log(books.length)
-		console.log(books)
-		closeModal();
+		if (submittedForm.title === "" || submittedForm.author === "" || submittedForm.translator === "" || submittedForm.rating === "" || submittedForm.review === ""){
+			console.log("Please fill out the form")
+			closeModal();
+		}
+		else{
+			books.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
+			console.log(books.length)
+			console.log(books)
+			closeModal();
+		}
 	}
 	return (
 		<div className="modal-container">
@@ -36,13 +42,13 @@ export const Modal = ({ closeModal }) => {
 					<div className="form-input">
 						<label>Title:
 							<br></br>
-							<input required={true} name="title" defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
+							<input name="title" required defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Author:
 							<br></br>
-							<input required name="author" defaultValue={submittedForm.author} onChange={onChangeHandler}/>
+							<input name="author" defaultValue={submittedForm.author} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">

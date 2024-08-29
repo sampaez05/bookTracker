@@ -40,7 +40,7 @@ export const Books = () => {
 
 	return (
         <div className="book">
-            <button className="book-button" onClick={() => setModalOpen(true)}>{books[getIndex(books)].title}</button> 
+            <button className="book-button" onClick={() => setModalOpen(true)}>{books[0].title}</button> 
         {/** this calls setModalOpen when the button is pressed, 
          * setting modalOpen to true so the modal will open and pop up 
          */}

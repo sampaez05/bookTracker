@@ -9,7 +9,7 @@ import "./modal.css";
 export const BookModal = ({ closeModal }) => {
 
 	const [submittedForm,setSubmittedForm] = useState({
-		title:books[getIndex(books)].title, author:books[getIndex(books)].author,translator:books[getIndex(books)].translator,rating:books[getIndex(books)].translator,review:books[getIndex(books)].review});
+		title:books[0].title, author:books[0].author,translator:books[0].translator,rating:books[0].translator,review:books[0].review});
 
 	const onChangeHandler = (e) => {
 		setSubmittedForm({
@@ -20,18 +20,24 @@ export const BookModal = ({ closeModal }) => {
 	
 	const submitAndClose = (e) => {
 		e.preventDefault();
-        books[getIndex(books)].title = submittedForm.title;
-        books[getIndex(books)].author = submittedForm.author;
-        books[getIndex(books)].translator = submittedForm.translator;
-        books[getIndex(books)].rating = submittedForm.rating;
-        books[getIndex(books)].review = submittedForm.review;
-		console.log(books.length)
-		console.log(books)
-		closeModal();
+		if (submittedForm.title === "" || submittedForm.author === "" || submittedForm.translator === "" || submittedForm.rating === "" || submittedForm.review === ""){
+			console.log("Please fill out the form")
+			closeModal();
+		}
+		else{
+        	books[0].title = submittedForm.title;
+        	books[0].author = submittedForm.author;
+        	books[0].translator = submittedForm.translator;
+        	books[0].rating = submittedForm.rating;
+        	books[0].review = submittedForm.review;
+			console.log(books.length)
+			console.log(books)
+			closeModal();
+	}
 	}
 	return (
 		<div className="modal-container">
-			{books[getIndex(books)].title}
+			{books[0].title}
 			<div className="modal">
 				<button className="exit-button" onClick={closeModal}>
 						<CgCloseO size={30}/>
