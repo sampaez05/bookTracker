@@ -8,6 +8,9 @@ import { Books, Book } from "./book";
 export const books:Book[] = []; 
 
 export function getIndex(books:Book[]):number{
+  /**
+   * this function takes in a 
+   */
   let index:number = -1; //starts at -1 since indexing starts at 0 not 1
   for (let book of books){
     index=index+1;
