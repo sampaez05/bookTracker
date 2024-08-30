@@ -11,23 +11,27 @@ export const Modal = ({ closeModal }) => {
 	const [submittedForm,setSubmittedForm] = useState({
 		title:"", author:"",translator:"",rating:"",review:""});
 
+	const [formFilled, setFormFilled] = useState(true);
+
 	const onChangeHandler = (e) => {
 		setSubmittedForm({
 			...submittedForm,
 			[e.target.name]:e. target.value,
 		});
+		setFormFilled(true)
 	}
 	
 	const submitAndClose = (e) => {
 		e.preventDefault();
 		if (submittedForm.title === "" || submittedForm.author === "" || submittedForm.translator === "" || submittedForm.rating === "" || submittedForm.review === ""){
 			console.log("Please fill out the form")
-			closeModal();
+			setFormFilled(false);
 		}
 		else{
 			books.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
 			console.log(books.length)
 			console.log(books)
+			setFormFilled(true)
 			closeModal();
 		}
 	}
@@ -73,6 +77,8 @@ export const Modal = ({ closeModal }) => {
 					<button className="submit-button" onClick={submitAndClose}>
 						<FaRegCircleCheck size={30}/>
 					</button>
+					<br></br>
+					{formFilled===false && <span>Fill Out Entire Form</span>}
 				</form>
 			</div>
 		</div>
