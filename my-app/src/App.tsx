@@ -48,8 +48,7 @@ function App() {
         */}
       </div>
     <Bookshelf />
-    <script src='book-loop.ts'></script>
-    {/*{books.length != 0 && <Books/>} {/* when the length of the books array is 0, no books appear on the bookshelf*/}
+    {books.length != 0 && <Books/>} {/* when the length of the books array is 0, no books appear on the bookshelf */}
     </div>
     
   );
