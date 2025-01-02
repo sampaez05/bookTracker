@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BookModal } from "./book-info-modal";
-import {books, getIndex} from "./App";
+import {books} from "./App";
 
 import "./book.css";
 
@@ -25,10 +25,12 @@ export class Book {
      * translator:string - the person who translated the book, if applicable
      * rating:string - the number of stars the user would rate the book
      */
-    }
   }
+}
 
-export const Books = () => {
+export const booksList:Book[] = [];
+
+export const Books = ({index}) => {
 
     let [modalOpen, setModalOpen] = useState(false);
 
@@ -39,16 +41,16 @@ export const Books = () => {
     */
 
 	return (
-        <div className="book">
-            <button className="book-button" onClick={() => setModalOpen(true)}>{books[0].title}</button> 
-        {/** this calls setModalOpen when the button is pressed, 
-         * setting modalOpen to true so the modal will open and pop up 
-         */}
-        {modalOpen && <BookModal closeModal={()=>{setModalOpen(false)}}/>} 
-        {/** this calls setModalOpen and sets modalOpen to false to close the modal
-        * closeModal - a function that, when called, calls setModalOpen in order to close the modal
-        * the closeModal function gets called inside modal.tsx whenever the user either clicks the submit or exit button on the modal
-        */}
+        <div className="books">
+          <button className="book-button" onClick={() => setModalOpen(true)}>{books[index].title}</button> 
+          {/** this calls setModalOpen when the button is pressed, 
+          * setting modalOpen to true so the modal will open and pop up 
+          */}
+          {modalOpen && <BookModal index={index} closeModal={()=>{setModalOpen(false)}}/>} 
+          {/** this calls setModalOpen and sets modalOpen to false to close the modal
+          * closeModal - a function that, when called, calls setModalOpen in order to close the modal
+          * the closeModal function gets called inside modal.tsx whenever the user either clicks the submit or exit button on the modal
+          */}
         </div>
 	);
 };

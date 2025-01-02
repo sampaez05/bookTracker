@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { CgCloseO } from "react-icons/cg";
 import { Books, Book } from "./book";
-import {books, getIndex} from "./App"
+import {books} from "./App"
 
 import "./modal.css";
 
-export const BookModal = ({ closeModal }) => {
+export const BookModal = ({ index, closeModal }) => {
 
 	const [submittedForm,setSubmittedForm] = useState({
-		title:books[0].title, author:books[0].author,translator:books[0].translator,rating:books[0].translator,review:books[0].review});
+		title:books[index].title, author:books[index].author,translator:books[index].translator,rating:books[index].rating,review:books[index].review});
 
 	const [formFilled, setFormFilled] = useState(true);
 
@@ -28,11 +28,11 @@ export const BookModal = ({ closeModal }) => {
 			setFormFilled(false);
 		}
 		else{
-        	books[0].title = submittedForm.title;
-        	books[0].author = submittedForm.author;
-        	books[0].translator = submittedForm.translator;
-        	books[0].rating = submittedForm.rating;
-        	books[0].review = submittedForm.review;
+        	books[index].title = submittedForm.title;
+        	books[index].author = submittedForm.author;
+        	books[index].translator = submittedForm.translator;
+        	books[index].rating = submittedForm.rating;
+        	books[index].review = submittedForm.review;
 			console.log(books.length)
 			console.log(books)
 			closeModal();
@@ -40,7 +40,7 @@ export const BookModal = ({ closeModal }) => {
 	}
 	return (
 		<div className="modal-container">
-			{books[0].title}
+			{books[index].title}
 			<div className="modal">
 				<button className="exit-button" onClick={closeModal}>
 						<CgCloseO size={30}/>
