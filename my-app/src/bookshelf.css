@@ -1,8 +1,4 @@
 
-.bookshelf {
-    z-index:-1;
-}
-
 .bookshelf1 {
     border-top: 10px solid black;
     border-left: 10px solid black;
@@ -12,9 +8,13 @@
     width: 500px;
     height: 150px;
     background-color: white;
-    padding: 5px;
     margin-top: 10px;
+
+    display: flex;
+    justify-content: left;
+    align-items: end;
   }
+
   .bookshelf2 {
     border-top: 0px;
     border-left: 10px solid black;
@@ -24,7 +24,10 @@
     width: 500px;
     height: 150px;
     background-color: white;
-    padding: 5px;
+    display: flex;
+    justify-content: left;
+    align-items: end;
+    
   }
   .bookshelf3 {
     border-top: 0px;
@@ -35,7 +38,9 @@
     width: 500px;
     height: 150px;
     background-color: white;
-    padding: 5px;
+    display: flex;
+    justify-content: left;
+    align-items: end;
   }
   .bookshelf4 {
     border-top: 0px;
@@ -46,5 +51,7 @@
     width: 500px;
     height: 150px;
     background-color: white;
-    padding: 5px;
+    display: flex;
+    justify-content: left;
+    align-items: end;
   }

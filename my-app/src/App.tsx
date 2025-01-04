@@ -48,14 +48,6 @@ function App() {
       <div className='bookshelf'>
         <Bookshelf />
       </div>
-      <div>
-        {
-          //books.length != 0 && <Books/>
-          books.map(function(book,index){
-            return <div key={index}><Books index={index}/></div>;
-          })
-        }
-      </div>
     </div>
     
   );
