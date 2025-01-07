@@ -1,3 +1,4 @@
+
 .modal-container {
     position:fixed;
     z-index: 1;
@@ -31,10 +32,20 @@
     padding:3px;
 }
 
+
 .input {
     background-color: #e1d7d5;
     border: 2px solid black;
     border-radius: 10px;
+}
+
+.rating {
+    border: 2px solid black;
+}
+
+.rating input {
+    border:5px solid black;
+    color: black;
 }
 
 .submit-button {

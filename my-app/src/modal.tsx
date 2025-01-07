@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import { FaRegStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { FaStarHalf } from "react-icons/fa";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { CgCloseO } from "react-icons/cg";
 import { Books, Book } from "./book";
@@ -81,7 +84,11 @@ export const Modal = ({ closeModal }) => {
 					<div className="form-input">
 						<label>Rating:
 							<br></br>
-							<input className="input" name="rating" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="1.0" value="1.0" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="2.0" value="2.0" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="3.0" value="3.0" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="4.0" value="4.0" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="5.0" value="5.0" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">

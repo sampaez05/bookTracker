@@ -6,6 +6,13 @@ import {books1, books2, books3} from "./App"
 
 import "./book-info-modal.css";
 
+function checkRating(rate:number, rating:string){
+	if (rate===Number(rating)){
+		return true;
+	}
+	return false;
+}
+
 export const BookModal = ({ book, index, closeModal }) => {
 
 	const [submittedForm,setSubmittedForm] = useState({
@@ -67,7 +74,11 @@ export const BookModal = ({ book, index, closeModal }) => {
 					<div className="form-input">
 						<label>Rating:
 							<br></br>
-							<input className="input" name="rating" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="1.0" value="1.0" checked={checkRating(1.0,submittedForm.rating)} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="2.0" value="2.0" checked={checkRating(2.0,submittedForm.rating)} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="3.0" value="3.0" checked={checkRating(3.0,submittedForm.rating)} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="4.0" value="4.0" checked={checkRating(4.0,submittedForm.rating)} onChange={onChangeHandler}/>
+							<input type="radio" className="input" name="rating" id="5.0" value="5.0" checked={checkRating(5.0,submittedForm.rating)} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">
