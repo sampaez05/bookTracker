@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { CgCloseO } from "react-icons/cg";
 import { Books, Book } from "./book";
-import {books} from "./App"
+import {books1, books2, books3, books4} from "./App"
 
 import "./modal.css";
 
@@ -28,9 +28,26 @@ export const Modal = ({ closeModal }) => {
 			setFormFilled(false);
 		}
 		else{
-			books.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
-			console.log(books.length)
-			console.log(books)
+			if (books1.length < 20){
+				books1.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
+				console.log(books1.length)
+				console.log(books1)
+			}
+			else if (books1.length >= 20 && books2.length < 20){
+			 	books2.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
+			 	console.log(books2.length)
+			 	console.log(books2)
+			}
+			 else if (books2.length >= 20 && books3.length < 20){
+			  	books3.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
+			  	console.log(books3.length)
+			  	console.log(books3)
+			}
+			else {
+				books4.push(new Book(submittedForm.title,submittedForm.author,submittedForm.translator,submittedForm.rating,submittedForm.review));
+			  	console.log(books4.length)
+			  	console.log(books4)
+			}
 			setFormFilled(true)
 			closeModal();
 		}

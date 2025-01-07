@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BookModal } from "./book-info-modal";
-import {books} from "./App";
+import {books1, books2, books3, books4} from "./App";
 
 import "./book.css";
 
@@ -28,9 +28,7 @@ export class Book {
   }
 }
 
-export const booksList:Book[] = [];
-
-export const Books = ({index}) => {
+export const Books = ({bookList, index}) => {
 
     let [modalOpen, setModalOpen] = useState(false);
 
@@ -42,11 +40,30 @@ export const Books = ({index}) => {
 
 	return (
         <div className="books">
-          <button className="book-button" onClick={() => setModalOpen(true)}>{books[index].title}</button> 
-          {/** this calls setModalOpen when the button is pressed, 
-          * setting modalOpen to true so the modal will open and pop up 
-          */}
-          {modalOpen && <BookModal index={index} closeModal={()=>{setModalOpen(false)}}/>} 
+          {<button className="book-button" onClick={() => setModalOpen(true)}>{bookList.title}</button> 
+          /*
+            books1.length <= 20 &&
+            <button className="book-button" onClick={() => setModalOpen(true)}>{books1[index].title}</button> 
+            /** this calls setModalOpen when the button is pressed, 
+            * setting modalOpen to true so the modal will open and pop up 
+            */
+          }
+          {/*
+            books1.length > 20 &&
+            <button className="book-button" onClick={() => setModalOpen(true)}>{books2[index].title}</button> 
+            /** this calls setModalOpen when the button is pressed, 
+            * setting modalOpen to true so the modal will open and pop up 
+            */
+          }
+          {/*
+            books2.length > 20 && 
+            <button className="book-button" onClick={() => setModalOpen(true)}>{books3[index].title}</button> 
+            /** this calls setModalOpen when the button is pressed, 
+            * setting modalOpen to true so the modal will open and pop up 
+            */
+          }
+          
+          {modalOpen && <BookModal booksList={bookList} index={index} closeModal={()=>{setModalOpen(false)}}/>} 
           {/** this calls setModalOpen and sets modalOpen to false to close the modal
           * closeModal - a function that, when called, calls setModalOpen in order to close the modal
           * the closeModal function gets called inside modal.tsx whenever the user either clicks the submit or exit button on the modal

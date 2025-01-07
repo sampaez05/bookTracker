@@ -2,28 +2,46 @@ import React from 'react';
 
 import "./bookshelf.css";
 import { Books, Book } from "./book";
-import {books} from "./App";
+import {books1, books2, books3, books4} from "./App";
 
 export const Bookshelf = () => {
 	return (
         <div className="bookshelf">
             <div className="bookshelf1">
-                    {
-                        books.map(function(book,index){
-                        return <div key={index}><Books index={index}/></div>;
+                {//books1.length < 20 &&
+                    books1.slice(0,20).map(function(book,index){
+                    return <div key={index}><Books bookList={book} index={index}/></div>;
+                    }) 
+                    /** this function iterates through every book in the list of books, 
+                     * displaying each book */
+                }
+            </div>
+            <div className="bookshelf2">
+                {
+                    //books1.length >= 20 && books2.length < 20 && 
+                        books2.slice(0,20).map(function(book,index){
+                        return <div key={index}><Books bookList={book} index={index}/></div>;
                         })
                         /** this function iterates through every book in the list of books, 
                          * displaying each book */
-                    }
-            </div>
-            <div className="bookshelf2">
-                <span className="books"></span>
+                } 
             </div>
             <div className="bookshelf3">
-                <span className="books"></span>
+            {
+                    //books2.length >= 20 && books3.length < 20 &&
+                        books3.slice(0,20).map(function(book,index){
+                        return <div key={index}><Books bookList={book} index={index}/></div>;
+                        })
+                        /** this function iterates through every book in the list of books, 
+                         * displaying each book */
+            } 
             </div>
             <div className="bookshelf4">
-                <span className="books"></span>
+                {
+                    books4.slice(0,20).map(function(book,index){
+                    return <div key={index}><Books bookList={book} index={index}/></div>;
+                    })
+                }
             </div>
         </div>
 	);

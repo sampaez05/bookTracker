@@ -2,14 +2,15 @@ import React, {useState} from 'react';
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { CgCloseO } from "react-icons/cg";
 import { Books, Book } from "./book";
-import {books} from "./App"
+import {books1, books2, books3} from "./App"
 
 import "./modal.css";
 
-export const BookModal = ({ index, closeModal }) => {
+export const BookModal = ({ booksList, index, closeModal }) => {
 
 	const [submittedForm,setSubmittedForm] = useState({
-		title:books[index].title, author:books[index].author,translator:books[index].translator,rating:books[index].rating,review:books[index].review});
+		title:booksList[index].title, author:booksList[index].author,translator:booksList[index].translator,rating:booksList[index].rating,review:booksList[index].review});
+		console.log("title book1");
 
 	const [formFilled, setFormFilled] = useState(true);
 
@@ -28,19 +29,39 @@ export const BookModal = ({ index, closeModal }) => {
 			setFormFilled(false);
 		}
 		else{
-        	books[index].title = submittedForm.title;
-        	books[index].author = submittedForm.author;
-        	books[index].translator = submittedForm.translator;
-        	books[index].rating = submittedForm.rating;
-        	books[index].review = submittedForm.review;
-			console.log(books.length)
-			console.log(books)
+			if (books1.length <= 20){
+				books1[index].title = submittedForm.title;
+        		books1[index].author = submittedForm.author;
+        		books1[index].translator = submittedForm.translator;
+        		books1[index].rating = submittedForm.rating;
+        		books1[index].review = submittedForm.review;
+				console.log(books1.length)
+				console.log(books1)
+			}
+			else if (books1.length > 20 && books2.length <= 20){
+				books2[index].title = submittedForm.title;
+        		books2[index].author = submittedForm.author;
+        		books2[index].translator = submittedForm.translator;
+        		books2[index].rating = submittedForm.rating;
+        		books2[index].review = submittedForm.review;
+				console.log(books2.length)
+				console.log(books2)
+			}
+			else if (books2.length > 20 && books3.length <= 20){
+				books3[index].title = submittedForm.title;
+        		books3[index].author = submittedForm.author;
+        		books3[index].translator = submittedForm.translator;
+        		books3[index].rating = submittedForm.rating;
+        		books2[index].review = submittedForm.review;
+				console.log(books3.length)
+				console.log(books3)
+			}
 			closeModal();
 	}
 	}
 	return (
 		<div className="modal-container">
-			{books[index].title}
+			{books1[index].title}
 			<div className="modal">
 				<button className="exit-button" onClick={closeModal}>
 						<CgCloseO size={30}/>

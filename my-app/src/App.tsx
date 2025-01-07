@@ -5,7 +5,13 @@ import { Modal } from "./modal";
 import { Bookshelf } from "./bookshelf";
 import { Books, Book } from "./book";
 
-export const books:Book[] = []; 
+export const books1:Book[] = [new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),
+new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","","")]; 
+export const books2:Book[] = [new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),
+new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","","")]; 
+export const books3:Book[] = [new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),
+new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","","")]; 
+export const books4:Book[] = []
 
 export function getIndex(books:Book[]):number{
   /**
