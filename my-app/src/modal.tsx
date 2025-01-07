@@ -63,31 +63,31 @@ export const Modal = ({ closeModal }) => {
 					<div className="form-input">
 						<label>Title:
 							<br></br>
-							<input name="title" required defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
+							<input className="input" name="title" required defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Author:
 							<br></br>
-							<input name="author" defaultValue={submittedForm.author} onChange={onChangeHandler}/>
+							<input className="input" name="author"  defaultValue={submittedForm.author} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Translator:
 							<br></br>
-							<input name="translator" defaultValue={submittedForm.translator} onChange={onChangeHandler}/>
+							<input className="input" name="translator" defaultValue={submittedForm.translator} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Rating:
 							<br></br>
-							<input name="rating" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+							<input className="input" name="rating" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Review:
 							<br></br>
-							<textarea name="review" defaultValue={submittedForm.review} onChange={onChangeHandler}/>
+							<textarea className="input" name="review" defaultValue={submittedForm.review} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<br></br>

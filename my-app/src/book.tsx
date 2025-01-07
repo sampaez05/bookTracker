@@ -40,11 +40,12 @@ export const Books = ({book, index}) => {
 	return (
         <div className="books">
           {<button className="book-button" onClick={() => setModalOpen(true)}>{book.title}</button>}
+          {/** this sets setModalOpen to true whenever a book is clicked on */}
           
           {modalOpen && <BookModal book={book} index={index} closeModal={()=>{setModalOpen(false)}}/>} 
-          {/** this calls setModalOpen and sets modalOpen to false to close the modal
-          * closeModal - a function that, when called, calls setModalOpen in order to close the modal
-          * the closeModal function gets called inside modal.tsx whenever the user either clicks the submit or exit button on the modal
+          {/** this checks if modalOpen is true and if it is, displays the appropriate book and then sets modalOpen to false to close the modal
+          * closeModal - a boolean that, when false, set setModalOpen to false in order to close the modal
+          * the closeModal function gets updated inside modal.tsx whenever the user either clicks the submit or exit button on the modal
           */}
         </div>
 	);

@@ -5,13 +5,10 @@ import { Modal } from "./modal";
 import { Bookshelf } from "./bookshelf";
 import { Books, Book } from "./book";
 
-export const books1:Book[] = [new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),
-new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","",""),new Book("1","","","","")]; 
-export const books2:Book[] = [new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),
-new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","",""),new Book("2","","","","")]; 
-export const books3:Book[] = [new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),
-new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","",""),new Book("3","","","","")]; 
-export const books4:Book[] = []
+export const books1:Book[] = [];
+export const books2:Book[] = [];
+export const books3:Book[] = []; 
+export const books4:Book[] = [];
 
 export function getIndex(books:Book[]):number{
   /**
@@ -39,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <span className="title">Hi, welcome to Interactive BookTracker</span>
+        <span className="title">The Interactive BookTracker</span>
         <br></br>
         <button className="add-book" onClick={() => setModalOpen(true)}>Add Book</button> 
         {/** this calls setModalOpen when the button is pressed, 

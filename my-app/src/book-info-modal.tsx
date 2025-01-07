@@ -4,13 +4,12 @@ import { CgCloseO } from "react-icons/cg";
 import { Books, Book } from "./book";
 import {books1, books2, books3} from "./App"
 
-import "./modal.css";
+import "./book-info-modal.css";
 
 export const BookModal = ({ book, index, closeModal }) => {
 
 	const [submittedForm,setSubmittedForm] = useState({
 		title:book.title, author:book.author,translator:book.translator,rating:book.rating,review:book.review});
-		console.log("title book1");
 
 	const [formFilled, setFormFilled] = useState(true);
 
@@ -50,31 +49,31 @@ export const BookModal = ({ book, index, closeModal }) => {
 					<div className="form-input">
 						<label>Title:
 							<br></br>
-							<input name="title" defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
+							<input className="input" name="title" defaultValue={submittedForm.title} onChange={(e)=>onChangeHandler(e)}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Author:
 							<br></br>
-							<input name="author" defaultValue={submittedForm.author} onChange={onChangeHandler}/>
+							<input className="input" name="author" defaultValue={submittedForm.author} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Translator:
 							<br></br>
-							<input name="translator" defaultValue={submittedForm.translator} onChange={onChangeHandler}/>
+							<input className="input" name="translator" defaultValue={submittedForm.translator} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Rating:
 							<br></br>
-							<input name="rating" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
+							<input className="input" name="rating" defaultValue={submittedForm.rating} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<div className="form-input">
 						<label>Review:
 							<br></br>
-							<textarea name="review" defaultValue={submittedForm.review} onChange={onChangeHandler}/>
+							<textarea className="input" name="review" defaultValue={submittedForm.review} onChange={onChangeHandler}/>
 						</label>
 					</div>
 					<br></br>

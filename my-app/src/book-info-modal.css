@@ -1,9 +1,11 @@
 .modal-container {
-    position:fixed;
+   /* display: flex;
+    justify-content: left;
+    align-items: top;*/
     z-index: 1;
     width: 300px;
     height: fit-content;
-    padding: 5px;
+    
     background-color: aliceblue;
     border: 2px solid black;
     
@@ -17,6 +19,7 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
     font-weight: bold;
+    border-radius: 25px;
 }
 
 .modal {

@@ -1,10 +1,12 @@
-.header {
+.App {
+  padding-top: 5%;
+  padding-bottom: 5%;
   text-align: center;
 }
 
 .title {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -15,4 +17,6 @@
   width: 100px;
   border-radius: 25px;
   cursor: pointer;
+  background-color: #e1d7d5;
+  border: 3px solid black;
 }
