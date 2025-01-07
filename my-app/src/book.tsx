@@ -28,10 +28,9 @@ export class Book {
   }
 }
 
-export const Books = ({bookList, index}) => {
+export const Books = ({book, index}) => {
 
     let [modalOpen, setModalOpen] = useState(false);
-
     /**
      * modalOpen is a boolean value to determine whether or not the modal(popup screen) is open or closed 
      * and is false by default to keep the modal closed
@@ -40,30 +39,9 @@ export const Books = ({bookList, index}) => {
 
 	return (
         <div className="books">
-          {<button className="book-button" onClick={() => setModalOpen(true)}>{bookList.title}</button> 
-          /*
-            books1.length <= 20 &&
-            <button className="book-button" onClick={() => setModalOpen(true)}>{books1[index].title}</button> 
-            /** this calls setModalOpen when the button is pressed, 
-            * setting modalOpen to true so the modal will open and pop up 
-            */
-          }
-          {/*
-            books1.length > 20 &&
-            <button className="book-button" onClick={() => setModalOpen(true)}>{books2[index].title}</button> 
-            /** this calls setModalOpen when the button is pressed, 
-            * setting modalOpen to true so the modal will open and pop up 
-            */
-          }
-          {/*
-            books2.length > 20 && 
-            <button className="book-button" onClick={() => setModalOpen(true)}>{books3[index].title}</button> 
-            /** this calls setModalOpen when the button is pressed, 
-            * setting modalOpen to true so the modal will open and pop up 
-            */
-          }
+          {<button className="book-button" onClick={() => setModalOpen(true)}>{book.title}</button>}
           
-          {modalOpen && <BookModal booksList={bookList} index={index} closeModal={()=>{setModalOpen(false)}}/>} 
+          {modalOpen && <BookModal book={book} index={index} closeModal={()=>{setModalOpen(false)}}/>} 
           {/** this calls setModalOpen and sets modalOpen to false to close the modal
           * closeModal - a function that, when called, calls setModalOpen in order to close the modal
           * the closeModal function gets called inside modal.tsx whenever the user either clicks the submit or exit button on the modal

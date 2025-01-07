@@ -10,7 +10,7 @@ export const Bookshelf = () => {
             <div className="bookshelf1">
                 {//books1.length < 20 &&
                     books1.slice(0,20).map(function(book,index){
-                    return <div key={index}><Books bookList={book} index={index}/></div>;
+                    return <div key={index}><Books book={book} index={index}/></div>;
                     }) 
                     /** this function iterates through every book in the list of books, 
                      * displaying each book */
@@ -20,7 +20,7 @@ export const Bookshelf = () => {
                 {
                     //books1.length >= 20 && books2.length < 20 && 
                         books2.slice(0,20).map(function(book,index){
-                        return <div key={index}><Books bookList={book} index={index}/></div>;
+                        return <div key={index}><Books book={book} index={index}/></div>;
                         })
                         /** this function iterates through every book in the list of books, 
                          * displaying each book */
@@ -30,7 +30,7 @@ export const Bookshelf = () => {
             {
                     //books2.length >= 20 && books3.length < 20 &&
                         books3.slice(0,20).map(function(book,index){
-                        return <div key={index}><Books bookList={book} index={index}/></div>;
+                        return <div key={index}><Books book={book} index={index}/></div>;
                         })
                         /** this function iterates through every book in the list of books, 
                          * displaying each book */
@@ -39,7 +39,7 @@ export const Bookshelf = () => {
             <div className="bookshelf4">
                 {
                     books4.slice(0,20).map(function(book,index){
-                    return <div key={index}><Books bookList={book} index={index}/></div>;
+                    return <div key={index}><Books book={book} index={index}/></div>;
                     })
                 }
             </div>

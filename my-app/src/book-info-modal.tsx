@@ -6,10 +6,10 @@ import {books1, books2, books3} from "./App"
 
 import "./modal.css";
 
-export const BookModal = ({ booksList, index, closeModal }) => {
+export const BookModal = ({ book, index, closeModal }) => {
 
 	const [submittedForm,setSubmittedForm] = useState({
-		title:booksList[index].title, author:booksList[index].author,translator:booksList[index].translator,rating:booksList[index].rating,review:booksList[index].review});
+		title:book.title, author:book.author,translator:book.translator,rating:book.rating,review:book.review});
 		console.log("title book1");
 
 	const [formFilled, setFormFilled] = useState(true);
@@ -29,39 +29,19 @@ export const BookModal = ({ booksList, index, closeModal }) => {
 			setFormFilled(false);
 		}
 		else{
-			if (books1.length <= 20){
-				books1[index].title = submittedForm.title;
-        		books1[index].author = submittedForm.author;
-        		books1[index].translator = submittedForm.translator;
-        		books1[index].rating = submittedForm.rating;
-        		books1[index].review = submittedForm.review;
-				console.log(books1.length)
-				console.log(books1)
-			}
-			else if (books1.length > 20 && books2.length <= 20){
-				books2[index].title = submittedForm.title;
-        		books2[index].author = submittedForm.author;
-        		books2[index].translator = submittedForm.translator;
-        		books2[index].rating = submittedForm.rating;
-        		books2[index].review = submittedForm.review;
-				console.log(books2.length)
-				console.log(books2)
-			}
-			else if (books2.length > 20 && books3.length <= 20){
-				books3[index].title = submittedForm.title;
-        		books3[index].author = submittedForm.author;
-        		books3[index].translator = submittedForm.translator;
-        		books3[index].rating = submittedForm.rating;
-        		books2[index].review = submittedForm.review;
-				console.log(books3.length)
-				console.log(books3)
-			}
+			book.title = submittedForm.title;
+        	book.author = submittedForm.author;
+        	book.translator = submittedForm.translator;
+        	book.rating = submittedForm.rating;
+        	book.review = submittedForm.review;
+			console.log(book.length)
+			console.log(book)
 			closeModal();
 	}
 	}
 	return (
 		<div className="modal-container">
-			{books1[index].title}
+			{book.title}
 			<div className="modal">
 				<button className="exit-button" onClick={closeModal}>
 						<CgCloseO size={30}/>
